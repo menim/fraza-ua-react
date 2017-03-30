@@ -1,28 +1,11 @@
 body {
-  background: url('pictures/background.png') #f2f2f2;
   font: 16px Arno Pro,Georgia,serif;
   color: #5b5b5b;
+  /*backgound-image: url('pictures/background.png');*/
 }
 
-.stroke {
-  position: absolute;
-  background-color: #c70000;
-  height: 12px;
-  width: 100%;
-}
 
-.logo {
-  width: 326px;
-  height: 132px;
-  position: relative;
-  z-index: 1;
-}
 
-.dot {
-  height: 10px;
-  width: 10px;
-  margin: 30px auto 0;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background: #c70000;
-}
+
+
+
