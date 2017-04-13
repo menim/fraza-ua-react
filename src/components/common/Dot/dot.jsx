@@ -3,7 +3,7 @@ import style from './style.css';
 
 const Dot = () => {
 	return (
-		<div style={style.dot}></div>
+		<div className={style.dot}></div>
 		);
 }
 
