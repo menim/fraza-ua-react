@@ -1,7 +1,5 @@
-body {
-  font: 16px Arno Pro,Georgia,serif;
-  color: #5b5b5b;
-  /*backgound-image: url('pictures/background.png');*/
+.wrapper {
+	height: 100%;
 }
 
 
