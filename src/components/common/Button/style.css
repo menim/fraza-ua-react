@@ -1,0 +1,12 @@
+.Btn {
+	right: 0;
+ 	background: url('../../../pictures/arrows.png') no-repeat;
+	width: 136px;
+  height: 48px;
+  position: absolute;
+  top: 75%;
+  border: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+}
