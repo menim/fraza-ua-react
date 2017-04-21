@@ -20,7 +20,7 @@ class App extends Component {
       <ReactSwipe ref="reactSwipe" className="mySwipe" swipeOptions={{continuous: false}}>
         <div className={style.wrapper}>
           <Stroke />
-          <QuotePage/>
+          <QuotePage onChange={this.next.bind(this)}/>
         </div> 
         <div>
         	sdlkfs; kslk s;dfk ;skd ;skf ;l
