@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
@@ -35,7 +36,9 @@
     "postcss-loader": "1.2.2",
     "promise": "7.1.1",
     "react-dev-utils": "^0.5.2",
+    "react-swipe": "^5.0.6",
     "style-loader": "0.13.1",
+    "swipe-js-iso": "^2.0.3",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
     "webpack-dev-server": "1.16.2",
@@ -49,7 +52,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
