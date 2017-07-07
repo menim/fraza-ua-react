@@ -1,12 +1,12 @@
-import React from 'react';
-import styles from './style.css'
+import React from "react";
+import styled from "styled-components";
 
-const Author = () => {
-	return (
-			<span className={styles.author}>
-				Вольтер
-			</span>
-		)
-}
+const Author = styled.span`
+	display: inline-block;
+    font-size: 1.75em;
+    letter-spacing: 5px;
+    margin: 33px auto 0;
+`;
+
 
 export default Author;
