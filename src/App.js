@@ -1,38 +1,40 @@
-import React, { Component } from 'react';
-import Stroke from './components/common/Stroke/stroke';
-import QuotePage from './components/QuotePage/index';
-import ReactSwipe from 'react-swipe';
+import React, { Component } from "react";
+import Stroke from "./components/common/Stroke/stroke";
+import QuotePage from "./components/QuotePage/index";
+import DescriptionPage from "./components/DescriptionPage/index";
+import ReactSwipe from "react-swipe";
 
-import style from './App.css';
 
-class App extends Component {
-	next() {
-		this.refs.reactSwipe.next();
-	}
+console.log(QuotePage);
 
-	prev() {
-		this.refs.reactSwipe.prev();
-	}
+ export default class App extends Component {
+  next() {
+    this.refs.reactSwipe.next();
+  }
+
+  prev() {
+    this.refs.reactSwipe.prev();
+  }
 
   render() {
     return (
-    <div>
-      <ReactSwipe ref="reactSwipe" className="mySwipe" swipeOptions={{continuous: false}}>
-        <div className={style.wrapper}>
-          <Stroke />
-          <QuotePage onChange={this.next.bind(this)}/>
-        </div> 
-        <div>
-        	sdlkfs; kslk s;dfk ;skd ;skf ;l
-        </div>
-      </ReactSwipe>
-        <div>
-        	<button type="button" onClick={this.next.bind(this)}>Right</button>
-        	<button type="button" onClick={this.prev.bind(this)}>Left</button>
-        </div>
-     </div>
+      <div>
+        <Stroke />
+        <ReactSwipe
+          ref="reactSwipe"
+          className="mySwipe"
+          swipeOptions={{ continuous: false }}
+        >
+          <div>
+            <QuotePage onChange={this.next.bind(this)} />
+          </div>
+          <div>
+            <Stroke />
+            <DescriptionPage onChange={this.prev.bind(this)} />
+          </div>
+        </ReactSwipe>
+      </div>
     );
   }
 }
 
-export default App;
