@@ -1,11 +1,15 @@
-import React from 'react';
-import style from './style.css';
+import React from "react";
 
-const Stroke = ()=>{
+import styled from 'styled-components';
 
-	return (
-		<div className={style.stroke}></div>
-		);
-} 
+
+const Stroke = styled.div`
+	position: absolute;
+  background-color: #c70000;
+  height: 12px;
+  width: 100%;
+`;
+
+
 
 export default Stroke;
