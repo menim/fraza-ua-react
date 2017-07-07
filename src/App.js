@@ -4,9 +4,6 @@ import QuotePage from "./components/QuotePage/index";
 import DescriptionPage from "./components/DescriptionPage/index";
 import ReactSwipe from "react-swipe";
 
-
-console.log(QuotePage);
-
  export default class App extends Component {
   next() {
     this.refs.reactSwipe.next();
