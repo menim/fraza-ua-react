@@ -1,11 +1,18 @@
 import React from 'react';
-import styles from './style.css';
+import btnToDescript from '../../../pictures/arrows.png';
+import styled from 'styled-components';
 
-const Button = (props) => {
-		return (
-				<button onClick={props.goToDescript} aria-label="Перейти до опису автора" className={styles.Btn}></button>
-			);
-	}
-
+const Button = styled.button`
+  right: 0;
+  background: url(${btnToDescript}) no-repeat;  
+  width: 136px;
+  height: 48px;
+  position: absolute;
+  top: 75%;
+  border: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+`;
 
 export default Button;
