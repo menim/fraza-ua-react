@@ -1,15 +1,12 @@
 import React from 'react';
-import style from './style.css';
+import styled from 'styled-components';
 
-export default class Quote extends React.Component {
-	render() {
-		return ( 
-		<p id="quote" className={style.quote}>
-			Картина уничтожения русской интеллигенции 
-			представляется мне территорией, 
-			подвергнутой бомбардировке: некоторые прекрасные здания ещё сохранились, но стоят обнажённо 
-			и одиноко среди руин и разрушенных улиц
-		</p>
-		)
-	}
-}
+const Quote = styled.p`
+  font-size: 2em;
+  max-width: 520px;
+  margin: 140px auto 0;
+  text-align: center;
+`
+
+export default Quote;
+
