@@ -18,7 +18,6 @@ injectGlobal`
 	body {
 	  margin: 0;
 	  padding: 0;
-	  height: 100%;
 	}
 
 	body {
@@ -26,8 +25,14 @@ injectGlobal`
 	  color: #5b5b5b;
 	  background-image: url(${background});
 	}
-
-	body>div {
-	  height: 100%;
+	
+	html,
+	body,
+	body>div,
+	[data-reactroot],
+	.react-swipe-container,
+	.react-swipe-container>div,
+	.react-swipe-container>div>div {
+		height: 100%;
 	}
 `;
