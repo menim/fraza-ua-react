@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from './Logo/logo';
 import logo from './Logo/head.png';
 import Quote from './Quote/Quote';
-import Center from './../common/Center/index'
 import Dot from './../common/Dot/dot';
 import Author from './../common/Author/author';
 import Button from './../common/Button/button';
