@@ -3,6 +3,10 @@ import Stroke from "./components/common/Stroke/stroke";
 import QuotePage from "./components/QuotePage/index";
 import DescriptionPage from "./components/DescriptionPage/index";
 import ReactSwipe from "react-swipe";
+import styled from "styled-components";
+
+const CenterQuotePage = styled(QuotePage)`
+      text-align: center;`;
 
  export default class App extends Component {
   next() {
@@ -14,6 +18,8 @@ import ReactSwipe from "react-swipe";
   }
 
   render() {
+
+
     return (
       <div>
         <Stroke />
@@ -23,7 +29,7 @@ import ReactSwipe from "react-swipe";
           swipeOptions={{ continuous: false }}
         >
           <div>
-            <QuotePage onChange={this.next.bind(this)} />
+            <CenterQuotePage onChange={this.next.bind(this)} />
           </div>
           <div>
             <Stroke />

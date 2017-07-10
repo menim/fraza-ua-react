@@ -16,7 +16,7 @@ export default class QuotePage extends React.Component {
 
 render(){
   return (
-    <Center>
+    <div className={this.props.className}>
       <Logo src={logo} alt='Фраза дня' />
       <Quote>
         Картина уничтожения русской интеллигенции 
@@ -27,7 +27,7 @@ render(){
       <Dot />
       <Author> Чак Паланик </Author>
       <Button onClick={this.btnClick.bind(this)} ></Button>
-    </Center>
+    </div>
     );
   }
 }
