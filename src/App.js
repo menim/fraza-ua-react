@@ -36,7 +36,6 @@ const CenterDescriptionPage = styled(DescriptionPage)`
             <CenterQuotePage onChange={this.next.bind(this)} />
           </div>
           <div>
-            <Stroke />
             <CenterDescriptionPage onChange={this.prev.bind(this)} />
           </div>
         </ReactSwipe>
