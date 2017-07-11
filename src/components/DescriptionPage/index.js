@@ -37,7 +37,7 @@ export default class DescriptionPage extends React.Component {
 				</Description>
 				<StyleCover />
 
-				<Button onClick={this.btnClick.bind(this)} ></Button>
+				<Button description onClick={this.btnClick.bind(this)} ></Button>
 			</div>
 		);
 	}
