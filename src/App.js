@@ -20,19 +20,17 @@ const CenterDescriptionPage = styled(DescriptionPage)`
 
     constructor(){
         super();
-        this.next = this.next.bind(this);
-        this.prev = this.prev.bind(this);
         this.state = {
             author: '',
             authorDescription: '',
-            cover: '',
-            linkTo: '',
             quote: '',
             years: ''
         }
-       this.getData = this.getData.bind(this);
-       this.getDayOfYear = this.getDayOfYear.bind(this);
-       this.getDay = this.getDay.bind(this);
+      this.next = this.next.bind(this);
+      this.prev = this.prev.bind(this);
+      this.getData = this.getData.bind(this);
+      this.getDayOfYear = this.getDayOfYear.bind(this);
+      this.getDay = this.getDay.bind(this);
     }
 
   next() {
@@ -73,17 +71,16 @@ const CenterDescriptionPage = styled(DescriptionPage)`
 
 
   getData() {
-      axios.get('http://spreadsheets.google.com/feeds/list/17T8jqTsiOdfGXKhAg21cpJAfV6zSHzuMF-nXbk0ltHs/od6/public/values?alt=json').then((response)=>{
-            
+      axios.get('http://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json').then((response)=>{
+          
           let spreadsheetLen = response.data.feed.entry.length-1
           let data = response.data.feed.entry[this.getDay(spreadsheetLen)];
+          console.log(response.data.feed.entry[this.getDay(spreadsheetLen)].gsx$authordescription.$t);
       this.setState({
-          author:  data.gsx$author.$t,
-          authorDescription: data.gsx$authordescription.$t,
-          cover: data.gsx$cover.$t,
-          linkTo: data.gsx$linktolitress.$t,
-          quote: data.gsx$qoute.$t,
-          years: data.gsx$years.$t,
+          author:  data.gsx$author.$t || '', 
+          authorDescription: data.gsx$authordescription.$t || '',
+          quote: data.gsx$quote.$t,
+          years: data.gsx$years.$t || '',
         });
 
       });
@@ -94,19 +91,22 @@ const CenterDescriptionPage = styled(DescriptionPage)`
   }
 
   render() {
-      console.log(this.state);
     return (
       <div>
         <Stroke />
-        <ReactSwipe ref="rffeactSwipe"
+        <ReactSwipe ref="reactSwipe"
           className="mySwipe"
           swipeOptions={{ continuous: false }}
         >
           <div>
-           <CenterQuotePage onChange={this.next} />
+           <CenterQuotePage onChange={this.next} author={this.state.author} quote={this.state.quote} />
           </div>
           <div>
-            <CenterDescriptionPage onChange={this.prev} />
+            <CenterDescriptionPage onChange={this.prev} 
+            author={this.state.author} 
+            authordescription={this.state.authorDescription} 
+            years={this.state.years}
+            />
           </div>
         </ReactSwipe>
       </div>    

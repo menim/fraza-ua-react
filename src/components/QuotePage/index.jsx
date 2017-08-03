@@ -18,13 +18,10 @@ render(){
    <div className={this.props.className}>
       <Logo src={logo} alt='Фраза дня' />
       <Quote>
-        Картина уничтожения русской интеллигенции 
-        представляется мне территорией, 
-        подвергнутой бомбардировке: некоторые прекрасные здания ещё сохранились, но стоят обнажённо 
-        и одиноко среди руин и разрушенных улиц
+        {this.props.quote}
       </Quote>
       <Dot />
-      <Author> Чак Паланик </Author>
+      <Author> {this.props.author} </Author>
       <Button onClick={this.btnClick.bind(this)} ></Button>
     </div>
     );

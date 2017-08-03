@@ -1,44 +1,28 @@
-import React from 'react';
-import Author from './../common/Author/author';
-import Button from './../common/Button/button';
-import Dot from './../common/Dot/dot';
-import Year from './Year';
-import Cover from './Cover';
-import Description from './Description';
-
-import styled from 'styled-components';
-
-const StyleCover = styled(Cover)`
-	display: inline-block;
-    position: relative;
-    margin: 60px auto 0;
-    font-size: .75em;
-    color: #fff;
-`;
-
+import React from "react";
+import Author from "./../common/Author/author";
+import Button from "./../common/Button/button";
+import Dot from "./../common/Dot/dot";
+import Year from "./Year";
+import Description from "./Description";
 
 
 export default class DescriptionPage extends React.Component {
+	btnClick() {
+		this.props.onChange();
+	}
 
-	btnClick(){
-    this.props.onChange();
-  }
+	render() {
 
-	render(){
 		return (
-			<div className={this.props.className}>	
-				<Author>Чак Паланик</Author>
-				<Year> (1232 - 1231)</Year>
+			<div className={this.props.className}>
+				<Author>{this.props.author}</Author>
+				<Year>{this.props.years}</Year>
 				<Dot />
 				<Description>
-					Древнегреческий философ, один из учеников Сократа. 
-					Проповедовал аскетизм и считал, что задача философии – понимание того, 
-					что является для человека истинным благом.
+						{this.props.authordescription}
 				</Description>
-				<StyleCover />
-				<Button description onClick={this.btnClick.bind(this)} ></Button>
+				<Button description onClick={this.btnClick.bind(this)} />
 			</div>
 		);
 	}
-
-} 
+}
