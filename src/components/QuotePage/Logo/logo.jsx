@@ -9,4 +9,5 @@ const Logo = styled.img`
   margin: 0 auto;
   display: block;
 `;
+
 export default Logo;

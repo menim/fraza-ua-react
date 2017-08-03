@@ -3,6 +3,8 @@ import LinkToBook from './LinkToBook';
 import BookCover from './BookCover';
 
 
+
+
 export default class Cover extends React.Component {
 
 	render(){
@@ -14,3 +16,4 @@ export default class Cover extends React.Component {
 			);
 	}
 }
+

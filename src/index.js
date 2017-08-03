@@ -9,15 +9,16 @@ const container = document.getElementById("root");
 
 ReactDOM.render(<App />, container);
 
+
 injectGlobal`
+
 	${fontFace("ArnoPro", "arno-pro")};
 	${fontFace("ArnoProItalic", "arnopro-italic")};
 
-
 	html,
 	body {
-	  margin: 0;
-	  padding: 0;
+		margin: 0;
+		padding: 0;
 	}
 
 	body {
