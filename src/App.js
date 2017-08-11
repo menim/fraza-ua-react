@@ -50,7 +50,7 @@ export default class App extends React.Component {
         this.setState({
           author: data.gsx$author.$t || "",
           authorDescription: hangingWords(data.gsx$authordescription.$t) || "",
-          quote: data.gsx$quote.$t,
+          quote: hangingWords(data.gsx$quote.$t),
           years: data.gsx$years.$t || ""
         });
       });
