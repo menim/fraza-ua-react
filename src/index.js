@@ -9,7 +9,6 @@ const container = document.getElementById("root");
 
 ReactDOM.render(<App />, container);
 
-
 injectGlobal`
 
 	${fontFace("ArnoPro", "arno-pro")};

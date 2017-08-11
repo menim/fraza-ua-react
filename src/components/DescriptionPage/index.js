@@ -5,7 +5,6 @@ import Dot from "./../common/Dot";
 import Year from "./Year";
 import Description from "./Description";
 
-
 export default class DescriptionPage extends React.Component {
 	btnClick() {
 		this.props.onChange();

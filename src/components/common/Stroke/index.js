@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Stroke = styled.div`
-	position: absolute;
+  position: absolute;
   background-color: #c70000;
   height: 12px;
   width: 100%;
