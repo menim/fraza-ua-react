@@ -69,7 +69,7 @@
   "bugs": {
     "url": "https://github.com/menim/fraza-ua-react/issues"
   },
-  "homepage": "https://github.com/menim/fraza-ua-react#readme",
+  "homepage": "./",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
