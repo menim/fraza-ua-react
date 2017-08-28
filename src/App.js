@@ -42,7 +42,7 @@ export default class App extends React.Component {
   getData() {
     axios
       .get(
-        "http://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json"
+        "https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json"
       )
       .then(response => {
         let spreadsheetLen = response.data.feed.entry.length - 1;
