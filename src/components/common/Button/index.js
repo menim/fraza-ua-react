@@ -12,6 +12,10 @@ const Button = styled.button`
   padding: 0;
   display: block;
   cursor: pointer;
+  @media (max-width: 767px){
+    bottom: 0;
+    top: auto;
+  }
 `;
 
 export default Button;

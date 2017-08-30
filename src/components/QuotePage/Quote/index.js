@@ -7,6 +7,12 @@ const Quote = styled.p`
   text-align: center;
   padding-left: 15px;
   padding-right: 15px;
+  @media (max-width: 767px){
+	font-size: 1.5em;
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 `;
 
 export default Quote;

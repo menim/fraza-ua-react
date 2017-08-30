@@ -6,6 +6,12 @@ const Description = styled.p`
   margin: 33px auto 0;
   padding-left: 15px;
   padding-right: 15px;
+  @media (max-width: 767px){
+  	font-size: 1.25em;
+  	max-width: 460px;
+  	padding-left: 5px;
+  	padding-right: 5px;
+  }
 `;
 
 export default Description;
