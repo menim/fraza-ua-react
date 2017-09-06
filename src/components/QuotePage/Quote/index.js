@@ -9,7 +9,7 @@ const Quote = styled.p`
   padding-right: 15px;
   @media (max-width: 767px){
 	font-size: 1.5em;
-    margin-top: 10px;
+    margin-top: 2em;
     padding-left: 5px;
     padding-right: 5px;
   }
