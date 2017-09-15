@@ -1,6 +1,3 @@
-// Set this to true for production
-var doCache = true;
-
 // Name our cache
 var CACHE_NAME = 'my-pwa-cache-v1';
 
@@ -22,15 +19,14 @@ self.addEventListener("activate", event => {
 
 // The first time the user starts up the PWA, 'install' is triggered.
 self.addEventListener('install', function(event) {
-  if (doCache) {
     event.waitUntil(
       caches.open(CACHE_NAME)
         .then(function(cache) {
           // Get the assets manifest so we can see what our js file is named
           // This is because webpack hashes it
-          fetch("asset-manifest.json")
+          fetch("manifest.json")
             .then(response => {
-              response.json()
+              response.json();
             })
             .then(assets => {
               // Open a cache and cache our files
@@ -38,21 +34,32 @@ self.addEventListener('install', function(event) {
               // We could also cache any static assets like CSS or images
               const urlsToCache = [
                 "/",
-                assets["main.js"]
-              ]
+                "static/js/bundle.js"
+              ];
               cache.addAll(urlsToCache)
               console.log('cached');
             })
         })
     );
-  }
 });
 
 // When the webpage goes to fetch files, we intercept that request and serve up the matching files
 // if we have them
 self.addEventListener('fetch', function(event) {
-    if (doCache) {
+    if(event.request.url.indexOf("https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json") === 0){
+        console.log('lalala');
       event.respondWith(
+      fetch(event.request)
+        .then(function(response) {
+          return caches.open(CACHE_NAME).then(function(cache) {
+            cache.put(event.request.url, response.clone());
+            console.log('[ServiceWorker] Fetched&Cached Data');
+            return response;
+          });
+        })
+      );
+    } else {
+    event.respondWith(
           caches.match(event.request).then(function(response) {
               return response || fetch(event.request);
           })
