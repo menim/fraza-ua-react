@@ -4,9 +4,9 @@ var cacheName = 'my-pwa-cache-v1',
     filesToCache = [
       "/",
       "/index.html",
-      "static/js/bundle.js"
-    ];
+      "static/js/bundle.js",
 
+    ];
 
 self.addEventListener('install', (e) => {
   console.log('[ServerWorker] install');
@@ -36,7 +36,7 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch',(e) => {
-  //console.log('[Service Worker] Fetch', e.request.url);
+  console.log('[Service Worker] Fetch');
   var dataUrl = "https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json";
   if (e.request.url.indexOf(dataUrl) > -1) {
     e.respondWith(
@@ -60,7 +60,3 @@ self.addEventListener('fetch',(e) => {
     );
   }
 });
-
-
-
-

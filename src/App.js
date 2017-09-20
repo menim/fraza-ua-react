@@ -60,8 +60,9 @@ export default class App extends React.Component {
     axios
       .get("https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json")
       .then(response => {
-        let spreadsheetLen = response.data.feed.entry.length - 1;
-        let data = response.data.feed.entry[getDay(spreadsheetLen)];
+        response = response.data;
+        let spreadsheetLen = response.feed.entry.length - 1;
+        let data = response.feed.entry[getDay(spreadsheetLen)];
         this.setState({
           author: data.gsx$author.$t,
           authorDescription: hangingWords(data.gsx$authordescription.$t),
