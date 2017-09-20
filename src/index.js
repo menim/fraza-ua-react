@@ -4,11 +4,13 @@ import App from "./App";
 import background from "./pictures/background.png";
 import { fontFace } from "./utils/fontFace";
 import { injectGlobal } from "styled-components";
+//import registerServiceWorker from './registerServiceWorker';
 
 
 const container = document.getElementById("root");
 
 ReactDOM.render(<App />, container);
+//registerServiceWorker();
 injectGlobal`
 
 	${fontFace("ArnoPro", "arno-pro")};
