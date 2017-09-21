@@ -1,6 +1,6 @@
 {
-  "short_name": "FrazaDnya",
-  "name": "Ukrainian fraza dnya",
+  "short_name": "Фраза дня",
+  "name": "Українська фраза дня",
   "icons": [
     {
       "src":"pwa-icons/48.png",
@@ -39,7 +39,7 @@
     }
   ],
   "start_url": "index.html?launcher=true",
-  "background_color": "#ff4025",
-  "theme_color": "#ff4025",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "display": "standalone"
 }
