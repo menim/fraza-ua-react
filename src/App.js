@@ -40,7 +40,7 @@ export default class App extends React.Component {
   }
 
   getData() {
-    if('caches' in window){
+    /*if('caches' in window){
       caches.match("https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json")
       .then((response) => {
         if(response){
@@ -56,7 +56,7 @@ export default class App extends React.Component {
           })
         }
       })
-     }
+     }*/
     axios
       .get("https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json")
       .then(response => {
@@ -101,7 +101,7 @@ export default class App extends React.Component {
             />
           </div>
         </ReactSwipe>
-      </div>
+        </div>
     );
   }
 }
