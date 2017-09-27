@@ -233,13 +233,6 @@ module.exports = {
     }),
 
     new SWPrecacheWebpackPlugin({
-      runtimeCaching: [
-        {
-          urlPattern: /^https:\/\/spreadsheets\.google\.com/,
-          handler: 'networkFirst'
-        }
-      ],
-      //"https://spreadsheets.google.com/feeds/list/1BKHXoRcKufFnwvip3McTGEKgUX1u6OEPHcwUjvM240E/od6/public/values?alt=json"
       // By default, a cache-busting query parameter is appended to requests
       // used to populate the caches, to ensure the responses are fresh.
       // If a URL is already hashed by Webpack, then there is no concern
@@ -258,7 +251,7 @@ module.exports = {
         }
         console.log(message);
       },
-      minify: false,
+      minify: true,
       // For unknown URLs, fallback to the index page
       navigateFallback: publicUrl + '/index.html',
       // Ignores URLs starting from /__ (useful for Firebase):
