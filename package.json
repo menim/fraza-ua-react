@@ -43,6 +43,7 @@
     "swipe-js-iso": "^2.0.3",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.2"

@@ -9,6 +9,7 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var paths = require('./paths');
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 var getClientEnvironment = require('./env');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 
@@ -177,6 +178,18 @@ module.exports = {
     ];
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'server',
+      analyzerHost: '127.0.0.1',
+      analyzerPort: 8888,
+      reportFilename: 'report.html',
+      defaultSizes: 'parsed',
+      openAnalizer: true,
+      generateStatsFile: false,
+      statsFilename: 'stats.json',
+      statsOptions: null,
+      logLevel: 'info' 
+    }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
